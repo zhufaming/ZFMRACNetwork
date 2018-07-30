@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9378F49FEA8D1C2C163887AD /* libPods-ZFMRACNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF9293849E08A3D1C60968 /* libPods-ZFMRACNetwork.a */; };
+		EC03EE76210F10A400E27A7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE75210F10A400E27A7C /* AppDelegate.m */; };
+		EC03EE79210F10A400E27A7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE78210F10A400E27A7C /* ViewController.m */; };
+		EC03EE7C210F10A400E27A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC03EE7A210F10A400E27A7C /* Main.storyboard */; };
+		EC03EE7E210F10A500E27A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC03EE7D210F10A500E27A7C /* Assets.xcassets */; };
+		EC03EE81210F10A500E27A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC03EE7F210F10A500E27A7C /* LaunchScreen.storyboard */; };
+		EC03EE84210F10A500E27A7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE83210F10A500E27A7C /* main.m */; };
+		EC03EE8E210F10A600E27A7C /* ZFMRACNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE8D210F10A600E27A7C /* ZFMRACNetworkTests.m */; };
+		EC03EE99210F10A600E27A7C /* ZFMRACNetworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE98210F10A600E27A7C /* ZFMRACNetworkUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC03EE8A210F10A600E27A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC03EE69210F10A400E27A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC03EE70210F10A400E27A7C;
+			remoteInfo = ZFMRACNetwork;
+		};
+		EC03EE95210F10A600E27A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC03EE69210F10A400E27A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC03EE70210F10A400E27A7C;
+			remoteInfo = ZFMRACNetwork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		97CF9293849E08A3D1C60968 /* libPods-ZFMRACNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZFMRACNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC5D4140DE5C9761DFDAD42 /* Pods-ZFMRACNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFMRACNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		EC03EE71210F10A400E27A7C /* ZFMRACNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFMRACNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC03EE74210F10A400E27A7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC03EE75210F10A400E27A7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC03EE77210F10A400E27A7C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC03EE78210F10A400E27A7C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC03EE7B210F10A400E27A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC03EE7D210F10A500E27A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC03EE80210F10A500E27A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC03EE82210F10A500E27A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC03EE83210F10A500E27A7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC03EE89210F10A600E27A7C /* ZFMRACNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZFMRACNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC03EE8D210F10A600E27A7C /* ZFMRACNetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFMRACNetworkTests.m; sourceTree = "<group>"; };
+		EC03EE8F210F10A600E27A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC03EE94210F10A600E27A7C /* ZFMRACNetworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZFMRACNetworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC03EE98210F10A600E27A7C /* ZFMRACNetworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFMRACNetworkUITests.m; sourceTree = "<group>"; };
+		EC03EE9A210F10A600E27A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC03EEA7210F199900E27A7C /* ZFMRACNetwork-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFMRACNetwork-Prefix.pch"; sourceTree = "<group>"; };
+		F653A53EE234777B795AE95E /* Pods-ZFMRACNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFMRACNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC03EE6E210F10A400E27A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9378F49FEA8D1C2C163887AD /* libPods-ZFMRACNetwork.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE86210F10A600E27A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE91210F10A600E27A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042398A03F4FFC3E180FE7A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F653A53EE234777B795AE95E /* Pods-ZFMRACNetwork.debug.xcconfig */,
+				CEC5D4140DE5C9761DFDAD42 /* Pods-ZFMRACNetwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2DE024BDD376FDED2F82C99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97CF9293849E08A3D1C60968 /* libPods-ZFMRACNetwork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC03EE68210F10A400E27A7C = {
+			isa = PBXGroup;
+			children = (
+				EC03EE73210F10A400E27A7C /* ZFMRACNetwork */,
+				EC03EE8C210F10A600E27A7C /* ZFMRACNetworkTests */,
+				EC03EE97210F10A600E27A7C /* ZFMRACNetworkUITests */,
+				EC03EE72210F10A400E27A7C /* Products */,
+				042398A03F4FFC3E180FE7A9 /* Pods */,
+				B2DE024BDD376FDED2F82C99 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC03EE72210F10A400E27A7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC03EE71210F10A400E27A7C /* ZFMRACNetwork.app */,
+				EC03EE89210F10A600E27A7C /* ZFMRACNetworkTests.xctest */,
+				EC03EE94210F10A600E27A7C /* ZFMRACNetworkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC03EE73210F10A400E27A7C /* ZFMRACNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				EC03EEA6210F10D600E27A7C /* ZFMRACNetworkTool */,
+				EC03EE74210F10A400E27A7C /* AppDelegate.h */,
+				EC03EE75210F10A400E27A7C /* AppDelegate.m */,
+				EC03EE77210F10A400E27A7C /* ViewController.h */,
+				EC03EE78210F10A400E27A7C /* ViewController.m */,
+				EC03EE7A210F10A400E27A7C /* Main.storyboard */,
+				EC03EE7D210F10A500E27A7C /* Assets.xcassets */,
+				EC03EE7F210F10A500E27A7C /* LaunchScreen.storyboard */,
+				EC03EE82210F10A500E27A7C /* Info.plist */,
+				EC03EE83210F10A500E27A7C /* main.m */,
+				EC03EEA7210F199900E27A7C /* ZFMRACNetwork-Prefix.pch */,
+			);
+			path = ZFMRACNetwork;
+			sourceTree = "<group>";
+		};
+		EC03EE8C210F10A600E27A7C /* ZFMRACNetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC03EE8D210F10A600E27A7C /* ZFMRACNetworkTests.m */,
+				EC03EE8F210F10A600E27A7C /* Info.plist */,
+			);
+			path = ZFMRACNetworkTests;
+			sourceTree = "<group>";
+		};
+		EC03EE97210F10A600E27A7C /* ZFMRACNetworkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC03EE98210F10A600E27A7C /* ZFMRACNetworkUITests.m */,
+				EC03EE9A210F10A600E27A7C /* Info.plist */,
+			);
+			path = ZFMRACNetworkUITests;
+			sourceTree = "<group>";
+		};
+		EC03EEA6210F10D600E27A7C /* ZFMRACNetworkTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZFMRACNetworkTool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC03EE70210F10A400E27A7C /* ZFMRACNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC03EE9D210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetwork" */;
+			buildPhases = (
+				3C130CFC897A8130A3B9D98C /* [CP] Check Pods Manifest.lock */,
+				EC03EE6D210F10A400E27A7C /* Sources */,
+				EC03EE6E210F10A400E27A7C /* Frameworks */,
+				EC03EE6F210F10A400E27A7C /* Resources */,
+				BF0FA7D26316F96D644841AB /* [CP] Embed Pods Frameworks */,
+				B0706303F4A5EF788F239A23 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZFMRACNetwork;
+			productName = ZFMRACNetwork;
+			productReference = EC03EE71210F10A400E27A7C /* ZFMRACNetwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC03EE88210F10A600E27A7C /* ZFMRACNetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC03EEA0210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetworkTests" */;
+			buildPhases = (
+				EC03EE85210F10A600E27A7C /* Sources */,
+				EC03EE86210F10A600E27A7C /* Frameworks */,
+				EC03EE87210F10A600E27A7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC03EE8B210F10A600E27A7C /* PBXTargetDependency */,
+			);
+			name = ZFMRACNetworkTests;
+			productName = ZFMRACNetworkTests;
+			productReference = EC03EE89210F10A600E27A7C /* ZFMRACNetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC03EE93210F10A600E27A7C /* ZFMRACNetworkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC03EEA3210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetworkUITests" */;
+			buildPhases = (
+				EC03EE90210F10A600E27A7C /* Sources */,
+				EC03EE91210F10A600E27A7C /* Frameworks */,
+				EC03EE92210F10A600E27A7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC03EE96210F10A600E27A7C /* PBXTargetDependency */,
+			);
+			name = ZFMRACNetworkUITests;
+			productName = ZFMRACNetworkUITests;
+			productReference = EC03EE94210F10A600E27A7C /* ZFMRACNetworkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC03EE69210F10A400E27A7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = zhufaming;
+				TargetAttributes = {
+					EC03EE70210F10A400E27A7C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					EC03EE88210F10A600E27A7C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = EC03EE70210F10A400E27A7C;
+					};
+					EC03EE93210F10A600E27A7C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = EC03EE70210F10A400E27A7C;
+					};
+				};
+			};
+			buildConfigurationList = EC03EE6C210F10A400E27A7C /* Build configuration list for PBXProject "ZFMRACNetwork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC03EE68210F10A400E27A7C;
+			productRefGroup = EC03EE72210F10A400E27A7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC03EE70210F10A400E27A7C /* ZFMRACNetwork */,
+				EC03EE88210F10A600E27A7C /* ZFMRACNetworkTests */,
+				EC03EE93210F10A600E27A7C /* ZFMRACNetworkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC03EE6F210F10A400E27A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03EE81210F10A500E27A7C /* LaunchScreen.storyboard in Resources */,
+				EC03EE7E210F10A500E27A7C /* Assets.xcassets in Resources */,
+				EC03EE7C210F10A400E27A7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE87210F10A600E27A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE92210F10A600E27A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C130CFC897A8130A3B9D98C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZFMRACNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0706303F4A5EF788F239A23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0FA7D26316F96D644841AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC03EE6D210F10A400E27A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03EE79210F10A400E27A7C /* ViewController.m in Sources */,
+				EC03EE84210F10A500E27A7C /* main.m in Sources */,
+				EC03EE76210F10A400E27A7C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE85210F10A600E27A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03EE8E210F10A600E27A7C /* ZFMRACNetworkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC03EE90210F10A600E27A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03EE99210F10A600E27A7C /* ZFMRACNetworkUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC03EE8B210F10A600E27A7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC03EE70210F10A400E27A7C /* ZFMRACNetwork */;
+			targetProxy = EC03EE8A210F10A600E27A7C /* PBXContainerItemProxy */;
+		};
+		EC03EE96210F10A600E27A7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC03EE70210F10A400E27A7C /* ZFMRACNetwork */;
+			targetProxy = EC03EE95210F10A600E27A7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC03EE7A210F10A400E27A7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC03EE7B210F10A400E27A7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC03EE7F210F10A500E27A7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC03EE80210F10A500E27A7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC03EE9B210F10A600E27A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC03EE9C210F10A600E27A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC03EE9E210F10A600E27A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F653A53EE234777B795AE95E /* Pods-ZFMRACNetwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork-Prefix.pch";
+				INFOPLIST_FILE = ZFMRACNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		EC03EE9F210F10A600E27A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC5D4140DE5C9761DFDAD42 /* Pods-ZFMRACNetwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork-Prefix.pch";
+				INFOPLIST_FILE = ZFMRACNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+		EC03EEA1210F10A600E27A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				INFOPLIST_FILE = ZFMRACNetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZFMRACNetwork.app/ZFMRACNetwork";
+			};
+			name = Debug;
+		};
+		EC03EEA2210F10A600E27A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				INFOPLIST_FILE = ZFMRACNetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZFMRACNetwork.app/ZFMRACNetwork";
+			};
+			name = Release;
+		};
+		EC03EEA4210F10A600E27A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				INFOPLIST_FILE = ZFMRACNetworkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetworkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZFMRACNetwork;
+			};
+			name = Debug;
+		};
+		EC03EEA5210F10A600E27A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6EB3T7R36T;
+				INFOPLIST_FILE = ZFMRACNetworkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zfm.ZFMRACNetworkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZFMRACNetwork;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC03EE6C210F10A400E27A7C /* Build configuration list for PBXProject "ZFMRACNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC03EE9B210F10A600E27A7C /* Debug */,
+				EC03EE9C210F10A600E27A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC03EE9D210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC03EE9E210F10A600E27A7C /* Debug */,
+				EC03EE9F210F10A600E27A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC03EEA0210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC03EEA1210F10A600E27A7C /* Debug */,
+				EC03EEA2210F10A600E27A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC03EEA3210F10A600E27A7C /* Build configuration list for PBXNativeTarget "ZFMRACNetworkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC03EEA4210F10A600E27A7C /* Debug */,
+				EC03EEA5210F10A600E27A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC03EE69210F10A400E27A7C /* Project object */;
+}
