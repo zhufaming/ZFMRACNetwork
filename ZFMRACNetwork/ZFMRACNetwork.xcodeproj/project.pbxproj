@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9378F49FEA8D1C2C163887AD /* libPods-ZFMRACNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF9293849E08A3D1C60968 /* libPods-ZFMRACNetwork.a */; };
+		EC019399210FF705006FFC08 /* FMEasyDict.m in Sources */ = {isa = PBXBuildFile; fileRef = EC019398210FF705006FFC08 /* FMEasyDict.m */; };
+		EC01939D210FFEA4006FFC08 /* FMHttpResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = EC01939C210FFEA4006FFC08 /* FMHttpResonse.m */; };
+		EC0193A0211000B1006FFC08 /* FMARCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EC01939F211000B1006FFC08 /* FMARCNetwork.m */; };
+		EC0193A3211033F7006FFC08 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0193A2211033F7006FFC08 /* FMHttpRequest.m */; };
 		EC03EE76210F10A400E27A7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE75210F10A400E27A7C /* AppDelegate.m */; };
 		EC03EE79210F10A400E27A7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03EE78210F10A400E27A7C /* ViewController.m */; };
 		EC03EE7C210F10A400E27A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC03EE7A210F10A400E27A7C /* Main.storyboard */; };
@@ -38,6 +42,15 @@
 /* Begin PBXFileReference section */
 		97CF9293849E08A3D1C60968 /* libPods-ZFMRACNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZFMRACNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC5D4140DE5C9761DFDAD42 /* Pods-ZFMRACNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFMRACNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		EC019396210FF100006FFC08 /* FMHttpConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMHttpConstant.h; sourceTree = "<group>"; };
+		EC019397210FF705006FFC08 /* FMEasyDict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMEasyDict.h; sourceTree = "<group>"; };
+		EC019398210FF705006FFC08 /* FMEasyDict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMEasyDict.m; sourceTree = "<group>"; };
+		EC01939B210FFEA4006FFC08 /* FMHttpResonse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMHttpResonse.h; sourceTree = "<group>"; };
+		EC01939C210FFEA4006FFC08 /* FMHttpResonse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMHttpResonse.m; sourceTree = "<group>"; };
+		EC01939E211000B1006FFC08 /* FMARCNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMARCNetwork.h; sourceTree = "<group>"; };
+		EC01939F211000B1006FFC08 /* FMARCNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMARCNetwork.m; sourceTree = "<group>"; };
+		EC0193A1211033F7006FFC08 /* FMHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMHttpRequest.h; sourceTree = "<group>"; };
+		EC0193A2211033F7006FFC08 /* FMHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMHttpRequest.m; sourceTree = "<group>"; };
 		EC03EE71210F10A400E27A7C /* ZFMRACNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFMRACNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC03EE74210F10A400E27A7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC03EE75210F10A400E27A7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +114,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC019391210FF055006FFC08 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EC019397210FF705006FFC08 /* FMEasyDict.h */,
+				EC019398210FF705006FFC08 /* FMEasyDict.m */,
+				EC01939E211000B1006FFC08 /* FMARCNetwork.h */,
+				EC01939F211000B1006FFC08 /* FMARCNetwork.m */,
+				EC0193A1211033F7006FFC08 /* FMHttpRequest.h */,
+				EC0193A2211033F7006FFC08 /* FMHttpRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EC019395210FF0A4006FFC08 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				EC019396210FF100006FFC08 /* FMHttpConstant.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		EC01939A210FFE65006FFC08 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EC01939B210FFEA4006FFC08 /* FMHttpResonse.h */,
+				EC01939C210FFEA4006FFC08 /* FMHttpResonse.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		EC03EE68210F10A400E27A7C = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +205,9 @@
 		EC03EEA6210F10D600E27A7C /* ZFMRACNetworkTool */ = {
 			isa = PBXGroup;
 			children = (
+				EC01939A210FFE65006FFC08 /* Response */,
+				EC019395210FF0A4006FFC08 /* Constant */,
+				EC019391210FF055006FFC08 /* Request */,
 			);
 			path = ZFMRACNetworkTool;
 			sourceTree = "<group>";
@@ -350,8 +396,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0193A0211000B1006FFC08 /* FMARCNetwork.m in Sources */,
 				EC03EE79210F10A400E27A7C /* ViewController.m in Sources */,
+				EC01939D210FFEA4006FFC08 /* FMHttpResonse.m in Sources */,
+				EC019399210FF705006FFC08 /* FMEasyDict.m in Sources */,
 				EC03EE84210F10A500E27A7C /* main.m in Sources */,
+				EC0193A3211033F7006FFC08 /* FMHttpRequest.m in Sources */,
 				EC03EE76210F10A400E27A7C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6EB3T7R36T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork/ZFMRACNetwork-Prefix.pch";
 				INFOPLIST_FILE = ZFMRACNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6EB3T7R36T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZFMRACNetwork/ZFMRACNetwork-Prefix.pch";
 				INFOPLIST_FILE = ZFMRACNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
