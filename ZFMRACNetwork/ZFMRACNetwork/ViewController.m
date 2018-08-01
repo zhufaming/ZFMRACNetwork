@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "FMARCNetwork.h"
-#import "FMHttpRequest.h"
-#import "FMHttpResonse.h"
+#import "ZFMRACNetworkTool.h"
 
 @interface ViewController ()
 
@@ -31,13 +29,6 @@
 - (IBAction)correctAction:(UIButton *)sender {
     /// 1. 配置参数
     NSMutableDictionary *easyDict = [NSMutableDictionary dictionary];
-    easyDict[@"useridx"] = @"61856069";
-    easyDict[@"type"] = @(1);
-    easyDict[@"page"] = @(1);
-    easyDict[@"lat"] = @(22.54192103514200);
-    easyDict[@"lon"] = @(113.96939828211362);
-    easyDict[@"province"] = @"广东省";
-    
     /// 2. 配置参数模型 #define MH_GET_LIVE_ROOM_LIST  @"Room/GetHotLive_v2"
     FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST path:@"Room/GetHotLive_v2" parameters:easyDict];
     
@@ -64,17 +55,10 @@
 - (IBAction)errorCorrectAction:(UIButton *)sender {
     /// 1. 配置参数
     NSMutableDictionary *easyDict = [NSMutableDictionary dictionary];
-//    easyDict[@"useridx"] = @"61856069";
-//    easyDict[@"type"] = @(1);
-//    easyDict[@"page"] = @(1);
-//    easyDict[@"lat"] = @(22.54192103514200);
-//    easyDict[@"lon"] = @(113.96939828211362);
-//    easyDict[@"province"] = @"广东省";
     
     /// 2. 配置参数模型 #define MH_GET_LIVE_ROOM_LIST  @"Room/GetHotLive_v2"
     FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST path:@"Room/GetHotLive_v2xx" parameters:easyDict];
-    
-    
+        
     _reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
     
     [_reqSignal subscribeNext:^(FMHttpResonse *response) {

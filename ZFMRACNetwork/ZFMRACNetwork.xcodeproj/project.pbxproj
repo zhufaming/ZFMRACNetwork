@@ -65,6 +65,7 @@
 		EC03EE98210F10A600E27A7C /* ZFMRACNetworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFMRACNetworkUITests.m; sourceTree = "<group>"; };
 		EC03EE9A210F10A600E27A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC03EEA7210F199900E27A7C /* ZFMRACNetwork-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFMRACNetwork-Prefix.pch"; sourceTree = "<group>"; };
+		ECAAC59721116761001903E0 /* ZFMRACNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFMRACNetworkTool.h; sourceTree = "<group>"; };
 		F653A53EE234777B795AE95E /* Pods-ZFMRACNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFMRACNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZFMRACNetwork/Pods-ZFMRACNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +204,7 @@
 				EC01939A210FFE65006FFC08 /* Response */,
 				EC019395210FF0A4006FFC08 /* Constant */,
 				EC019391210FF055006FFC08 /* Request */,
+				ECAAC59721116761001903E0 /* ZFMRACNetworkTool.h */,
 			);
 			path = ZFMRACNetworkTool;
 			sourceTree = "<group>";
