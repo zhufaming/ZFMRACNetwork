@@ -15,14 +15,23 @@
 
 @interface FMARCNetwork : NSObject
 
-
++(instancetype) sharedInstance;
 /**
  网络请求,返回信号
-
+ 按照， FMHttpRequest 参数化设置
  @param req FMHttpRequest
  @return RACSignal
  */
 - (RACSignal *)requestNetworkData:(FMHttpRequest *)req;
+
+/**
+ 网络请你，简便方案
+
+ @param path 请求路径 --- 基本链接，请在 FMHttpRConstant.h 文件中设置
+ @param params 参数字典
+ @return RACSignal
+ */
+- (RACSignal *)requestSimpleNetworkPath:(NSString *)path params:(NSDictionary *)params;
 
 
 /**

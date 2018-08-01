@@ -14,7 +14,7 @@
 #define FMHttpConstant_h
 
 /*******URL******/
-#define BaseUrl @"你的应用请求基链接"
+#define BaseUrl @"https://live.9158.com/"
 /********ImgBaseURL*****/
 #define ImgBaseURL @""
 

@@ -11,11 +11,13 @@
 #import "FMHttpRequest.h"
 #import "FMHttpResonse.h"
 #import "AFNetworking.h"
-#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import "AFNetworkActivityIndicatorManager.h"
+#import "JDStatusBarNotification.h"
+#import "MBProgressHUD.h"
 
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
-    HTTPResponseCodeSuccess = 0,           /// 请求成功
+    HTTPResponseCodeSuccess = 100,           /// 请求成功
     HTTPResponseCodeNotLogin = 1009,       /// 用户尚未登录，一般在网络请求前判断处理，也可以在网络层处理
 };
 
@@ -24,10 +26,13 @@ NSString *const HTTPServiceErrorDomain = @"HTTPServiceErrorDomain";
 /// 请求成功，但statusCode != 0
 NSString *const HTTPServiceErrorResponseCodeKey = @"HTTPServiceErrorResponseCodeKey";
 
-
+//请求地址错误
 NSString * const HTTPServiceErrorRequestURLKey = @"HTTPServiceErrorRequestURLKey";
+//请求错误的code码key: 请求成功了，但code码是错误提示的code,比如参数错误
 NSString * const HTTPServiceErrorHTTPStatusCodeKey = @"HTTPServiceErrorHTTPStatusCodeKey";
+//请求错误，详细描述key
 NSString * const HTTPServiceErrorDescriptionKey = @"HTTPServiceErrorDescriptionKey";
+//服务端错误提示，信息key
 NSString * const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";
 
 @interface FMARCNetwork()
@@ -70,11 +75,7 @@ static FMARCNetwork * _instance = nil;
 /// config service
 - (void)configHTTPService{
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
-#if DEBUG
-    responseSerializer.removesKeysWithNullValues = NO;
-#else
     responseSerializer.removesKeysWithNullValues = YES;
-#endif
     responseSerializer.readingOptions = NSJSONReadingAllowFragments;
     /// config
     self.manager.responseSerializer = responseSerializer;
@@ -106,15 +107,25 @@ static FMARCNetwork * _instance = nil;
         
         if (status == AFNetworkReachabilityStatusUnknown) {
             NSLog(@"--- 未知网络 ---");
+            [JDStatusBarNotification showWithStatus:@"网络状态未知" styleName:JDStatusBarStyleWarning];
+            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
         }else if (status == AFNetworkReachabilityStatusNotReachable) {
   
-            NSLog(@"--- 无网络 ---");
+            [JDStatusBarNotification showWithStatus:@"网络不给力，请检查网络" styleName:JDStatusBarStyleWarning];
+            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
+            
         }else{
             NSLog(@"--- 有网络 ---");
-            
+             [JDStatusBarNotification dismiss];
         }
     }];
     [self.manager.reachabilityManager startMonitoring];
+}
+
+- (RACSignal *)requestSimpleNetworkPath:(NSString *)path params:(NSDictionary *)params
+{
+    FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST path:path parameters:params];
+    return [self requestNetworkData:req];
 }
 
 
@@ -145,6 +156,7 @@ static FMARCNetwork * _instance = nil;
         /// 获取请求任务
         __block NSURLSessionDataTask *task = nil;
         task = [self.manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+             @strongify(self);
             if (error) {
                 NSError *parseError = [self errorFromRequestWithTask:task httpResponse:(NSHTTPURLResponse *)response responseObject:responseObject error:error];
     
@@ -152,11 +164,12 @@ static FMARCNetwork * _instance = nil;
                 NSString *msgStr = parseError.userInfo[HTTPServiceErrorDescriptionKey];
                 //初始化、返回数据模型
                 FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError code:code msg:msgStr];
-                //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
                 //同样也返回到,调用的地址，也可处理，自己选择
                 [subscriber sendNext:response];
                 //[subscriber sendError:parseError];
                 [subscriber sendCompleted];
+                //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
+                [self showMsgtext:msgStr];
                 
             } else {
               
@@ -179,9 +192,10 @@ static FMARCNetwork * _instance = nil;
                         NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
                         
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError code:statusCode msg:@"请登录!"];
-                        
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
+                        //错误提示
+                        [self showMsgtext:@"请登录!"];
                         
                     }else{
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
@@ -199,8 +213,11 @@ static FMARCNetwork * _instance = nil;
                         NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
                         //错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
+                
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
+                        //错误处理
+                        [self showMsgtext:msgTips];
                     }
                 }
             }
@@ -212,27 +229,27 @@ static FMARCNetwork * _instance = nil;
             [task cancel];
         }];
     }];
-    return signal;
+    return [signal replayLazily]; //多次订阅同样的信号，执行一次
 }
 
 
 - (RACSignal *)uploadNetworkPath:(NSString *)path params:(NSDictionary *)params fileDatas:(NSArray<NSData *> *)fileDatas name:(NSString *)name mimeType:(NSString *)mimeType
 {
     
-    return [self UploadRequestWithPath:path parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-
+    return [[self UploadRequestWithPath:path parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
         NSInteger count = fileDatas.count;
         for (int i = 0; i< count; i++) {
             /// 取出fileData
             NSData *fileData = fileDatas[i];
-
+            
             /// 断言
             NSAssert([fileData isKindOfClass:NSData.class], @"fileData is not an NSData class: %@", fileData);
-
+            
             // 在网络开发中，上传文件时，是文件不允许被覆盖，文件重名
             // 要解决此问题，
             // 可以在上传时使用当前的系统事件作为文件名
-
+            
             static NSDateFormatter *formatter = nil;
             static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
@@ -242,11 +259,11 @@ static FMARCNetwork * _instance = nil;
             [formatter setDateFormat:@"yyyyMMddHHmmss"];
             NSString *dateString = [formatter stringFromDate:[NSDate date]];
             NSString *fileName = [NSString  stringWithFormat:@"senba_empty_%@_%d.jpg", dateString , i];
-
+            
             [formData appendPartWithFileData:fileData name:name fileName:fileName mimeType:!(mimeType.length == 0 || mimeType == nil || [mimeType isKindOfClass:[NSNull class]])?mimeType:@"application/octet-stream"];
             
         }
-    }];
+    }] replayLazily];
     
     
 }
@@ -273,6 +290,7 @@ static FMARCNetwork * _instance = nil;
         }
         
         __block NSURLSessionDataTask *task = [self.manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+            @strongify(self);
             if (error) {
                 NSError *parseError = [self errorFromRequestWithTask:task httpResponse:(NSHTTPURLResponse *)response responseObject:responseObject error:error];
                 
@@ -285,6 +303,9 @@ static FMARCNetwork * _instance = nil;
                 [subscriber sendNext:response];
                 //[subscriber sendError:parseError];
                 [subscriber sendCompleted];
+                
+                [self showMsgtext:msgStr];
+                
             } else {
                 
                 /// 判断
@@ -310,6 +331,8 @@ static FMARCNetwork * _instance = nil;
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
                         
+                        [self showMsgtext:@"请登录"];
+                        
                     }else{
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
                         userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
@@ -328,6 +351,8 @@ static FMARCNetwork * _instance = nil;
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
+                        
+                        [self showMsgtext:msgTips];
                     }
                 }
             
@@ -424,6 +449,21 @@ static FMARCNetwork * _instance = nil;
     return [NSError errorWithDomain:HTTPServiceErrorDomain code:HTTPCode userInfo:userInfo];
     
 }
+
+#pragma 错误提示
+- (void)showMsgtext:(NSString *)text {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
+    
+    // Set the text mode to show only text.
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = text;
+    // Move to bottm center.
+    hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
+    
+    [hud hideAnimated:YES afterDelay:2.f];
+    
+}
+
 
 
 @end

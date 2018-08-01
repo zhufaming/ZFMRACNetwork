@@ -8,5 +8,10 @@ target 'ZFMRACNetwork' do
  
     #ReactiveCoca 
     pod 'ReactiveObjC', '~> 3.1.0'
- 
+   
+    #网络提示
+    pod 'JDStatusBarNotification', '~> 1.5.6'
+   
+    #提示
+    pod 'MBProgressHUD', '~> 1.1.0' 
  end
